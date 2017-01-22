@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
     private Dictionary<string, Action> ActionToTake;
@@ -32,7 +33,7 @@ public class MainMenu : MonoBehaviour {
 
     private void StartGame()
     {
-        return;
+        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
     }
 
     private void QuitGame()
