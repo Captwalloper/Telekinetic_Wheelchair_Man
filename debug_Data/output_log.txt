@@ -1,0 +1,121 @@
+Mono path[0] = 'C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/debug_Data/Managed'
+Mono path[1] = 'C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/debug_Data/Mono'
+Mono config path = 'C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/debug_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/debug_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55149
+Multi-casting "[IP] 10.136.45.245 [Port] 55149 [Flags] 3 [Guid] 481450578 [EditorId] 2720440974 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-DCRA6PU) [Debug] 1" to [225.0.0.222:54997]...
+Waiting for connection from host on [0.0.0.0:55149]...
+PlayerConnection accepted from [10.136.45.245] handle:0x2f8
+Started listening to [0.0.0.0:55149]
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56578
+PlayerConnection already initialized - listening to [0.0.0.0:55149]
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   NVIDIA
+    VRAM:     8035 MB
+    Driver:   21.21.13.7633
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+- Completed reload, in  0.137 seconds
+Platform assembly: C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\debug_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 3840x2160 60Hz; virtual: 3840x2160 at 0,0
+<RI> Initialized touch support.
+OpenVR initialized!
+ 
+(Filename: C:/buildslave/unity/build/Runtime/VR/OpenVR/OpenVR.cpp Line: 381)
+
+UnloadTime: 0.685222 ms
+Connected to lighthouse:LHR-0CA3A54A
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SteamVR:.ctor() (at C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Scripts\SteamVR.cs:253)
+SteamVR:CreateInstance() (at C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Scripts\SteamVR.cs:97)
+SteamVR:get_instance() (at C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Scripts\SteamVR.cs:48)
+SteamVR_Camera:OnEnable() (at C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Scripts\SteamVR_Camera.cs:50)
+ 
+(Filename: C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/Assets/SteamVR/Scripts/SteamVR.cs Line: 253)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 345c -> priority: 1 
+  Thread -> id: 3d38 -> priority: 1 
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Material:Internal_CreateWithShader (UnityEngine.Material,UnityEngine.Shader)
+  at UnityEngine.Material..ctor (UnityEngine.Shader shader) [0x00009] in C:\buildslave\unity\build\artifacts\generated\common\runtime\ShaderBindings.gen.cs:313 
+  at SteamVR_LaserPointer.Start () [0x00136] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_LaserPointer.cs:61 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/ShaderBindings.gen.cs Line: 313)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at MenuItem.OnTriggerPressed (System.Object sender, ClickedEventArgs e) [0x00031] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\_Scripts\MenuItem.cs:69 
+  at (wrapper delegate-invoke) ClickedEventHandler:invoke_void__this___object_ClickedEventArgs (object,ClickedEventArgs)
+  at SteamVR_TrackedController.OnTriggerClicked (ClickedEventArgs e) [0x00014] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:67 
+  at SteamVR_TrackedController.Update () [0x000b5] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:145 
+ 
+(Filename: C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/Assets/_Scripts/MenuItem.cs Line: 69)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at MenuItem.OnTriggerPressed (System.Object sender, ClickedEventArgs e) [0x00031] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\_Scripts\MenuItem.cs:69 
+  at (wrapper delegate-invoke) ClickedEventHandler:invoke_void__this___object_ClickedEventArgs (object,ClickedEventArgs)
+  at SteamVR_TrackedController.OnTriggerClicked (ClickedEventArgs e) [0x00014] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:67 
+  at SteamVR_TrackedController.Update () [0x000b5] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:145 
+ 
+(Filename: C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/Assets/_Scripts/MenuItem.cs Line: 69)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at MenuItem.OnTriggerPressed (System.Object sender, ClickedEventArgs e) [0x00031] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\_Scripts\MenuItem.cs:69 
+  at (wrapper delegate-invoke) ClickedEventHandler:invoke_void__this___object_ClickedEventArgs (object,ClickedEventArgs)
+  at SteamVR_TrackedController.OnTriggerClicked (ClickedEventArgs e) [0x00014] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:67 
+  at SteamVR_TrackedController.Update () [0x000b5] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:145 
+ 
+(Filename: C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/Assets/_Scripts/MenuItem.cs Line: 69)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at MenuItem.OnTriggerPressed (System.Object sender, ClickedEventArgs e) [0x00031] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\_Scripts\MenuItem.cs:69 
+  at (wrapper delegate-invoke) ClickedEventHandler:invoke_void__this___object_ClickedEventArgs (object,ClickedEventArgs)
+  at SteamVR_TrackedController.OnTriggerClicked (ClickedEventArgs e) [0x00014] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:67 
+  at SteamVR_TrackedController.Update () [0x000b5] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:145 
+ 
+(Filename: C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/Assets/_Scripts/MenuItem.cs Line: 69)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at MenuItem.OnTriggerPressed (System.Object sender, ClickedEventArgs e) [0x00031] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\_Scripts\MenuItem.cs:69 
+  at (wrapper delegate-invoke) ClickedEventHandler:invoke_void__this___object_ClickedEventArgs (object,ClickedEventArgs)
+  at SteamVR_TrackedController.OnTriggerClicked (ClickedEventArgs e) [0x00014] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:67 
+  at SteamVR_TrackedController.Update () [0x000b5] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:145 
+ 
+(Filename: C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/Assets/_Scripts/MenuItem.cs Line: 69)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at MenuItem.OnTriggerPressed (System.Object sender, ClickedEventArgs e) [0x00031] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\_Scripts\MenuItem.cs:69 
+  at (wrapper delegate-invoke) ClickedEventHandler:invoke_void__this___object_ClickedEventArgs (object,ClickedEventArgs)
+  at SteamVR_TrackedController.OnTriggerClicked (ClickedEventArgs e) [0x00014] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:67 
+  at SteamVR_TrackedController.Update () [0x000b5] in C:\Users\ConnorM\Documents\Unity\Telekinetic_Wheelchair_Man\Assets\SteamVR\Extras\SteamVR_TrackedController.cs:145 
+ 
+(Filename: C:/Users/ConnorM/Documents/Unity/Telekinetic_Wheelchair_Man/Assets/_Scripts/MenuItem.cs Line: 69)
+
+OpenVR Shutdown
+ 
+(Filename: C:/buildslave/unity/build/Runtime/VR/OpenVR/OpenVR.cpp Line: 815)
+
+Waiting for finish
