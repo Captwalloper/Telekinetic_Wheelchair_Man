@@ -34,6 +34,8 @@ public class SteamVR_TrackedController : MonoBehaviour
     public event ClickedEventHandler Gripped;
     public event ClickedEventHandler Ungripped;
 
+    public static SteamVR_TrackedController derpController;
+
     // Use this for initialization
     protected virtual void Start()
     {
@@ -44,7 +46,8 @@ public class SteamVR_TrackedController : MonoBehaviour
 
 		if (controllerIndex != 0)
 		{
-			this.GetComponent<SteamVR_TrackedObject>().index = (SteamVR_TrackedObject.EIndex)controllerIndex;
+            derpController = this;
+            this.GetComponent<SteamVR_TrackedObject>().index = (SteamVR_TrackedObject.EIndex)controllerIndex;
 			if (this.GetComponent<SteamVR_RenderModel>() != null)
 			{
 				this.GetComponent<SteamVR_RenderModel>().index = (SteamVR_TrackedObject.EIndex)controllerIndex;

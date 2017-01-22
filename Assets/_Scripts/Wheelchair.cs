@@ -18,9 +18,12 @@ public class Wheelchair : MonoBehaviour {
 
     private void Update()
     {
-        if (wheel1.angularVelocity.magnitude != 0 || wheel2.angularVelocity.magnitude != 0)
+        if (wheel1.angularVelocity.magnitude > 1 || wheel2.angularVelocity.magnitude > 1)
         {
-            wheelchair.transform.position += new Vector3(.05f, 0, 0);
+            var vec = new Vector3(.05f, 0, 0);
+            wheelchair.transform.position += vec;
+            wheel1.transform.position += vec;
+            wheel2.transform.position += vec;
         }
 
         var platformPosition = wheelchair.transform.position;
