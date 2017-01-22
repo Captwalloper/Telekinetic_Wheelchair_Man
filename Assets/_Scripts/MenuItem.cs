@@ -13,6 +13,18 @@ public class MenuItem : MonoBehaviour {
     private static SteamVR_LaserPointer pointer;
     private static SteamVR_TrackedController controller;
 
+    private static bool reset = false;
+    private void OnLevelWasLoaded(int level)
+    {
+        if (!reset)
+        {
+            pointer = null;
+            controller = null;
+            nameOfSelected = null;
+        }
+        reset = !reset;
+    }
+
     void OnEnable()
     {
         startColor = GetComponent<Renderer>().material.color;

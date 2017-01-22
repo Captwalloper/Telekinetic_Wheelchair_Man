@@ -9,6 +9,16 @@ public class OpenMenu : MonoBehaviour {
     //
     private static SteamVR_TrackedController controller;
 
+    private static bool reset = false;
+    private void OnLevelWasLoaded(int level)
+    {
+        if (!reset)
+        {
+            controller = null;
+        }
+        reset = !reset;
+    }
+
     void Start()
     {
         controller = controller ?? GetComponent<SteamVR_TrackedController>();
@@ -17,7 +27,7 @@ public class OpenMenu : MonoBehaviour {
 
     void OnDisable()
     {
-        controller.TriggerClicked -= OnGripped;
+        controller.Gripped -= OnGripped;
     }
 
     private void OnGripped(object sender, ClickedEventArgs e)
