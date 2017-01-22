@@ -7,7 +7,7 @@ public class WheelSpinning : MonoBehaviour {
     public Rigidbody attachPoint;
 
     SteamVR_TrackedObject trackedObj;
-    FixedJoint joint;
+    HingeJoint joint;
 
     void Awake()
     {
@@ -17,14 +17,20 @@ public class WheelSpinning : MonoBehaviour {
     void FixedUpdate()
     {
         var device = SteamVR_Controller.Input((int)trackedObj.index);
+        //if (joint!=null)
+        //{
+        //    Debug.Log("Torque :" + joint.currentTorque);
+        //}
+        
         if (joint == null && device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             //var go = GameObject.Instantiate(prefab);
             //prefab.SetActive(false);
             //go.transform.position = prefab.transform.position;
 
-            joint = prefab.AddComponent<FixedJoint>();
+            joint = prefab.AddComponent<HingeJoint>();
             joint.connectedBody = attachPoint;
+            //joint.breakTorque = 4000f;
         }
         else if (joint != null && device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {
@@ -35,24 +41,26 @@ public class WheelSpinning : MonoBehaviour {
             //Object.Destroy(go, 15.0f);
             //prefab.SetActive(true);
 
-            //// We should probably apply the offset between trackedObj.transform.position
-            //// and device.transform.pos to insert into the physics sim at the correct
-            //// location, however, we would then want to predict ahead the visual representation
-            //// by the same amount we are predicting our render poses.
+            // We should probably apply the offset between trackedObj.transform.position
+            // and device.transform.pos to insert into the physics sim at the correct
+            // location, however, we would then want to predict ahead the visual representation
+            // by the same amount we are predicting our render poses.
 
-            //var origin = trackedObj.origin ? trackedObj.origin : trackedObj.transform.parent;
-            //if (origin != null)
-            //{
-            //    //rigidbody.velocity = origin.TransformVector(device.velocity);
-            //    rigidbody.angularVelocity = origin.TransformVector(device.angularVelocity);
-            //}
-            //else
-            //{
-            //    //rigidbody.velocity = device.velocity;
-            //    rigidbody.angularVelocity = device.angularVelocity;
-            //}
+            var origin = trackedObj.origin ? trackedObj.origin : trackedObj.transform.parent;
+            Vector3 padVector = new Vector3(5, 5, -5);
+            if (origin != null)
+            {
+                //rigidbody.velocity = origin.TransformVector(device.velocity);
+                rigidbody.angularVelocity = origin.TransformVector(device.angularVelocity) + padVector;
+            }
+            else
+            {
+                //rigidbody.velocity = device.velocity;
+                rigidbody.angularVelocity = device.angularVelocity + padVector;
+            }
+            Debug.Log("Angular Velocity: " + rigidbody.angularVelocity);
 
-            //rigidbody.maxAngularVelocity = rigidbody.angularVelocity.magnitude;
+            rigidbody.maxAngularVelocity = rigidbody.angularVelocity.magnitude;
         }
     }
 }
