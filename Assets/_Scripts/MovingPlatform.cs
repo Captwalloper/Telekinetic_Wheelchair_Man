@@ -3,47 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour {
-    public Transform movingPlatform;
-    public Transform position1;
-    public Transform position2;
-    public Vector3 newPosition;
-    private State? currentState = null;
-    public float smooth;
-    public float resetTime;
-
-    void Start()
+    public GameObject movingPlatform;
+    Transform reference
     {
-        ChangeTarget();
-    }
-
-    void FixedUpdate()
-    {
-        movingPlatform.position = Vector3.Lerp(movingPlatform.position, newPosition, smooth * Time.deltaTime);
-    }
-
-    void ChangeTarget()
-    {
-        if (currentState.HasValue && currentState.Value == State.MovingToPosition1)
+        get
         {
-            currentState = State.MovingToPosition2;
-            newPosition = position2.position;
+            var top = SteamVR_Render.Top();
+            return (top != null) ? top.origin : null;
         }
-        else if (currentState.HasValue && currentState == State.MovingToPosition2)
-        {
-            currentState = State.MovingToPosition1;
-            newPosition = position1.position;
-        }
-        else
-        {
-            currentState = State.MovingToPosition2;
-            newPosition = position2.position;
-        }
-        Invoke("ChangeTarget", resetTime);
     }
+    //
+    private Vector3? lastPlatformPosition = null;
 
-    private enum State
+    private void FixedUpdate()
     {
-        MovingToPosition1,
-        MovingToPosition2,
+        var platformPosition = movingPlatform.transform.position;
+        if (lastPlatformPosition.HasValue && reference != null)
+        {
+            var diff = platformPosition - lastPlatformPosition;
+            reference.position += diff.Value;
+        }
+        lastPlatformPosition = platformPosition;
     }
 }
